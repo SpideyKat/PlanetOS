@@ -1,6 +1,6 @@
 # PlanetOS
 
-A website that can potentially save the world.
+A website that spreads awareness about climate change and helps people track their carbon footprint, contributing to saving the environment and the Earth.
 
 ## Description
 
@@ -11,15 +11,15 @@ This website explains to users the problem that the world is facing right now: C
 ### Dependencies
 
 * Any modern web browser (Chrome, Firefox, Safari, Edge)
-* No external libraries required — uses pure HTML, CSS, and JavaScript
-* Optional: A local server (VSCode Live Server or similar) for smoother testing
+* No external libraries required, uses HTML, CSS, and JavaScript
+* Must be run in a local server (VSCode Live Server or similar)
 
 ### Installing
 
-* Clone or download the repository
-* Place all files in the same directory, including the `assets` folder
-* Make sure the structure looks like this:
+* Download the WebProjectFinal.zip archive.
+* Unzip it and open the WebProject folder in VSCode.
+* Make sure the structure has the three HTML, CSS and JS files on the root and all assets in an Assets folder.
 
 ## Acknowledgments
-
+AI was used in this project.
 We used ChatGPT for assistance when we faced problems in the code. (https://chatgpt.com/)
