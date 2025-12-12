@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PlanetOS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- WebGL scene -->
+    <div id="scene" aria-hidden="true"></div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-text" id="heroText">
+        <h1>PlanetOS</h1>
+        <p>Scroll to see how rising CO₂ affects oceans, ice, and fire, then estimate your footprint.</p>
+        <p class="hint">Scroll ↓</p>
+      </div>
+    </section>
+
+    <!-- TRANSITION CORRIDOR -->
+    <section class="transition" id="transition">
+      <div class="transition-sticky">
+        <div class="transition-tint" id="tint"></div>
+        <div class="transition-vignette" id="vignette"></div>
+
+        <div class="transition-hint" id="transitionHint">
+          CO₂ doesn’t just warm the air. It changes the ocean too.
+        </div>
+      </div>
+    </section>
+
+    <!-- REEF -->
+    <section class="reef" id="reef">
+      <div class="reef-sticky" id="reefSticky">
+        <img class="reef-layer layer-bg" src="assets/Coral-Background.svg" alt="" />
+        <img class="reef-layer layer-mid" src="assets/Coral-Midground.svg" alt="" />
+        <img class="reef-layer layer-midfg" src="assets/Coral-Mid-Foreground.svg" alt="" />
+        <img class="reef-layer layer-fg" src="assets/Coral-Foreground.svg" alt="" />
+
+        <div class="reef-fog" id="reefFog"></div>
+
+        <div class="reef-copy" id="reefCopy">
+          <h2>Oceans: Warming and Acidification</h2>
+          <p>Heat stress and acidity can weaken coral reefs over time.</p>
+        </div>
+
+        <div class="bubbles" aria-hidden="false">
+          <div class="bubble-col">
+            <article class="bubble" id="bubbleLeft">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image1.png" alt="Heat stress → Bleaching" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Heat stress → Bleaching</h3>
+                  <p>Warm spells push corals into stress, so they expel the algae that feed them, turning reefs white and fragile.</p>
+                  <a class="bubble-link" href="https://oceanservice.noaa.gov/facts/coral_bleach.html" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="bubbleMid">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image2.png" alt="CO₂ → Ocean acidification" />
+                </div>
+                <div class="bubble-text">
+                  <h3>CO₂ → Ocean acidification</h3>
+                  <p>As the ocean absorbs extra CO₂, seawater chemistry shifts and carbonate becomes less available, making it harder for corals to build strong skeletons.</p>
+                  <a class="bubble-link" href="https://oceanservice.noaa.gov/facts/acidification.html" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="bubbleRight">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image3.png" alt="No time to recover" />
+                </div>
+                <div class="bubble-text">
+                  <h3>No time to recover</h3>
+                  <p>Repeated heat stress plus acidification reduces reef resilience, so damage stacks faster than ecosystems can rebuild.</p>
+                  <a class="bubble-link" href="https://www.ipcc.ch/report/ar6/wg2/chapter/chapter-3/" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ICE -->
+    <section class="ice" id="ice">
+      <div class="ice-sticky" id="iceSticky">
+        <div class="ice-stage" aria-hidden="true">
+          <img class="ice-layer ice-bg" src="assets/Ice-Background.svg" alt="" />
+          <img class="ice-layer ice-mid" src="assets/Ice-Midground.svg" alt="" />
+          <img class="ice-layer ice-fg" src="assets/Ice-Foreground.svg" alt="" />
+        </div>
+
+        <div class="ice-fog" id="iceFog"></div>
+
+        <div class="ice-copy">
+          <h2>Ice: Melting and Sea Level Rise</h2>
+          <p>Warming air and oceans accelerate ice loss worldwide.</p>
+        </div>
+
+        <div class="bubbles" aria-hidden="false">
+          <div class="bubble-col">
+            <article class="bubble" id="iceBubbleLeft">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image4.png" alt="Warming from above" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Warming from above</h3>
+                  <p>CO₂ traps heat, and the Arctic warms especially fast. As bright ice disappears, darker surfaces absorb more sunlight, accelerating melt.</p>
+                  <a class="bubble-link" href="https://science.nasa.gov/earth/earth-observatory/arctic-amplification-81214/" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="iceBubbleMid">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image5.png" alt="Melting from below" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Melting from below</h3>
+                  <p>Warmer ocean water can undercut ice shelves from beneath, weakening their “buttress” effect and letting glaciers speed up into the sea.</p>
+                  <a class="bubble-link" href="https://nsidc.org/learn/parts-cryosphere/ice-shelves/science-ice-shelves" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="iceBubbleRight">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image6.png" alt="Global ripple effects" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Global ripple effects</h3>
+                  <p>Ice-sheet loss contributes to sea level rise and increases long-term risks for coasts and ecosystems worldwide.</p>
+                  <a class="bubble-link" href="https://science.nasa.gov/earth/explore/earth-indicators/ice-sheets/" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOREST / FIRE -->
+    <section class="forest" id="forest">
+      <div class="forest-sticky" id="forestSticky">
+        <div class="forest-stage" aria-hidden="true">
+          <img class="forest-layer forest-bg" src="assets/Background.svg" alt="" />
+          <img class="forest-layer forest-backmid" src="assets/Backmidground.svg" alt="" />
+          <img class="forest-layer forest-mid" src="assets/Midground.svg" alt="" />
+          <img class="forest-layer forest-midfg" src="assets/Midforeground.svg" alt="" />
+          <img class="forest-layer forest-frontmid" src="assets/Frontmidforeground.svg" alt="" />
+          <img class="forest-layer forest-fg" src="assets/Foreground.svg" alt="" />
+        </div>
+
+        <div class="forest-fog" id="forestFog"></div>
+
+        <div class="forest-copy" id="forestCopy">
+          <h2>Fire: Hotter, Drier Conditions</h2>
+          <p>Warming increases drought risk and extends fire seasons.</p>
+        </div>
+
+        <div class="bubbles" aria-hidden="false">
+          <div class="bubble-col">
+            <article class="bubble" id="forestBubbleLeft">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image7.png" alt="Heat dries the fuel" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Heat dries the fuel</h3>
+                  <p>Hotter conditions dry out soils and vegetation, making landscapes easier to ignite and fires more intense.</p>
+                  <a class="bubble-link" href="https://www.noaa.gov/noaa-wildfire/wildfire-climate-connection" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="forestBubbleMid">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image8.png" alt="Longer fire seasons" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Longer fire seasons</h3>
+                  <p>Warming and drought can lengthen the window when fuels are dry enough to burn, turning “fire season” into more of the year.</p>
+                  <a class="bubble-link" href="https://www.climatehubs.usda.gov/hubs/northwest/topic/climate-change-and-wildfire-idaho-oregon-and-washington" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="bubble-col">
+            <article class="bubble" id="forestBubbleRight">
+              <div class="bubble-inner">
+                <div class="bubble-media">
+                  <img src="assets/Image9.png" alt="Extreme ignition + spread" />
+                </div>
+                <div class="bubble-text">
+                  <h3>Extreme ignition + spread</h3>
+                  <p>Hot, dry, windy weather (and dry lightning) increases ignition risk and helps fires spread rapidly by pushing flames and embers forward.</p>
+                  <a class="bubble-link" href="https://www.noaa.gov/stories/ask-scientist-how-can-weather-spark-and-spread-wildfires" target="_blank" rel="noopener noreferrer">Learn more</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOOL BRIDGE -->
+    <section class="tool-bridge" aria-hidden="true"></section>
+
+    <!-- CALCULATOR -->
+    <section class="calculator" id="calculator">
+      <div class="calculator-sticky">
+        <div class="calc-shell">
+          <div class="calc-left">
+            <div class="calc-head calc-anim" style="--d: 0ms">
+              <h2>Your Carbon Footprint</h2>
+              <p class="calc-sub">Adjust a few habits. See an estimated annual CO₂ change.</p>
+              <button class="calc-reset" id="calcReset" type="button">Reset to typical</button>
+            </div>
+
+            <div class="setting-card calc-anim" style="--d: 80ms">
+              <div class="setting-top">
+                <div class="setting-label">Meat-free meals per week</div>
+                <div class="setting-value" id="mealsVal">0 / 21</div>
+              </div>
+              <input id="mealsInput" type="range" min="0" max="21" step="1" value="0" />
+              <div class="setting-help" id="mealsHelp">No change from baseline.</div>
+            </div>
+
+            <div class="setting-card calc-anim" style="--d: 140ms">
+              <div class="setting-top">
+                <div class="setting-label">Public transport commutes per week</div>
+                <div class="setting-value" id="commutesVal">0 trips/week</div>
+              </div>
+              <input id="commutesInput" type="range" min="0" max="14" step="1" value="0" />
+              <div class="setting-help" id="commutesHelp">Replacing car rides has a big impact.</div>
+            </div>
+
+            <div class="setting-card calc-anim" style="--d: 200ms">
+              <div class="setting-top">
+                <div class="setting-label">Average home AC temperature</div>
+                <div class="setting-value" id="acVal">24°C</div>
+              </div>
+              <input id="acInput" type="range" min="18" max="28" step="1" value="24" />
+              <div class="setting-help" id="acHelp">Higher temperature usually reduces energy use.</div>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="result-card calc-anim" id="resultCard" style="--d: 260ms">
+              <div class="result-label">Estimated annual reduction</div>
+
+              <div class="result-big">
+                <div class="result-number" id="co2Big">0</div>
+                <div class="result-unit">kg CO₂ / year</div>
+              </div>
+
+              <button class="calc-link" id="calcHowBtn" type="button">How we estimate this</button>
+
+              <div class="equiv">
+                <div class="equiv-row" id="treesRow">≈ 0 trees grown for a year</div>
+                <div class="equiv-row" id="kmRow">≈ 0 km of driving avoided</div>
+              </div>
+
+              <button class="calc-breakdown-btn" id="calcBreakdownBtn" type="button">Show breakdown</button>
+              <div class="breakdown" id="calcBreakdown" aria-hidden="true">
+                <div class="breakdown-row"><span>Diet</span><span id="calcDiet">0 kg</span></div>
+                <div class="breakdown-row"><span>Transport</span><span id="calcTransport">0 kg</span></div>
+                <div class="breakdown-row"><span>Cooling</span><span id="calcCooling">0 kg</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <dialog class="calc-dialog" id="calcDialog">
+          <div class="calc-dialog-inner">
+            <h3>How we estimate this</h3>
+            <p>We use common averages to estimate annual change. Real impact varies by location and energy grid.</p>
+            <ul>
+              <li>Diet: fewer meat-based meals tends to reduce emissions.</li>
+              <li>Transport: swapping car trips for public transport can reduce emissions.</li>
+              <li>Cooling: warmer thermostat settings often reduce electricity use.</li>
+            </ul>
+            <div class="calc-dialog-actions">
+              <button class="calc-btn calc-btn--ghost" id="calcCloseBtn" type="button">Close</button>
+            </div>
+          </div>
+        </dialog>
+      </div>
+    </section>
+
+    <!-- OUTRO -->
+    <section class="calc-outro" id="calcOutro">
+      <div class="calc-outro-inner">
+        <h2>Your plan could save <span id="calcOutroBig">0</span> kg CO₂/year.</h2>
+        <p class="calc-outro-sub">Small weekly habits can add up. Keep exploring, and share what you learn.</p>
+
+        <div class="calc-cta">
+          <button class="calc-btn calc-btn--solid" id="calcSaveBtn" type="button">Save my plan</button>
+          <button class="calc-btn calc-btn--ghost" id="calcShareBtn" type="button">Share this</button>
+          <a class="calc-btn calc-btn--ghost" href="#hero">Explore the next action</a>
+        </div>
+
+        <div class="calc-toast" id="calcToast" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer class="footer-spacer" id="footer">
+      <p class="footer-credit">Made by Enzhi and Qixin</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
