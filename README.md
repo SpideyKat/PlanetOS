@@ -24,5 +24,7 @@ Live Demo: https://mysticcoder2133.github.io/F32/
 
 ## Acknowledgments
 
-- This project was developed for the BuildingBlocs Hacklathon competition.
+- This project was developed for the BuildingBlocs December Conference 2025 Hacklathon competition.
 - ChatGPT was used to assist with debugging and problem-solving during development.
+
+Created by Enzhi and Qixin.
